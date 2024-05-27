@@ -1,0 +1,100 @@
+<!--
+CABEÇALHO:
+---------------------------------------------------------------------
+ARQUIVO: templates/delete.html
+---------------------------------------------------------------------
+AUTOR DO CÓDIGO: GUSTAVO GANTOIS CARIA CARVALHO
+---------------------------------------------------------------------
+DATA DA REALIZAÇÃO DO CÓDIGO: 19/05/2024 
+----------------------------------------------------------------------
+DEPENDÊNCIAS:
+
+HTML SEMÂNTICO 
+UTILIZAÇÃO DE FORMULÁRIO
+Link com o backend junto a isso com o banco de dados SQLAlchemy
+Flask para ligar as rotas do HTML
+
+DESCRIÇÃO: Criação de um formulário com method POST linkado com os estilos HTML para dar estilos a cada página/sessão, este formulário
+é responsavel pela exclusão do cadastro/login do usuário do aplicativo junto a isso ele deleta o usuário a conta do usuário do banco de dados
+do aplicativo.
+
+-->
+
+<!DOCTYPE html>
+<!--Mostrando que a linguagem da página sera pt-br-->
+<html lang="pt-br">
+<!--Sessão head do site, responsável pelo cabeçalho onde ficaram os links sobre cada coisa será utilizada ao longo do html-->
+<head>
+     <!--charset=UTF-8 para rodar na maioria dos navegadores-->
+    <meta charset="UTF-8">
+    <!--Linkando o arquivo cs/styles.css com o html através do Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+     <!--Mostrando o meta da aplicação -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Título da página que está sendo renderizada, este título ficará no canto esquerdo na web-->
+    <title>Minha Aplicação Flask - Página de Delete</title>
+</head>
+<!--Tag body, onde ficará o corpo do site contendo todas as informações do delete -->
+<body>
+        <!--Utilizando o HTML semântico com section para mostrar a sessão onde dentro estará o delete do aplicativo::-->
+    <section class="delete">
+         <!--Tag h1 responsável por uma tag que utilizamos para botar títulos principais das páginas, junto a uma tag span, utilizei a tag span para mudar a cor da frase para vermelho.-->
+        <h1 class="title-delete">Excluir <span>conta</span></h1>
+         <!--A Tag p irá mostrar a descrição da página mostrando uma pergunta se o usuário deseja excluir a conta-->
+        <p class="description-delete">Tem certeza de que deseja excluir sua conta? Esta ação não pode ser desfeita</p>
+         <!--Tag div terá o container onde estará o delete e a tag form nesta tag form estará o formulário-->
+        <div class="container-delete">
+             <!--Tag form com um action para rota delete e um método sendo POST para adicionar o backend.-->
+            <form action="/delete" method="POST" class="form-delete">
+             <!--O container maior que será a div group irá conter várias divs menores chamada input-box.-->
+              <div class="input-group">
+                 <!--Div menor com o input box e além disso terá um label e o input para pegar as informações do usuário.-->
+                <div class="input-box">
+                    <!--Label é responsável pela pergunta do input para o usuário-->
+                    <label for="email">Digite o seu email:</label>
+                    <!--O input é utilizado para o usuário mandar as informações-->
+                    <input id="email" type="email" name="email" placeholder="Digite o seu e-mail" required>
+                </div>
+                <!--Fechando a primeira div input-box-->
+                <div class="input-box">
+                     <!--Label é responsável pela pergunta do input para o usuário-->
+                    <label for="username">Digite o seu nome de usuário:</label>
+                    <!--O input é utilizado para o usuário mandar as informações-->
+                    <input id="username" type="text" name="username" placeholder="Nome de usuário" required>
+                </div>
+                 <!--Fechando a segunda div input-box-->
+                <div class="input-box">
+                      <!--Label é responsável pela pergunta do input para o usuário-->
+                    <label for="password">Digite a sua senha:</label>
+                     <!--O input é utilizado para o usuário mandar as informações-->
+                    <input id="password" type="password" name="password" placeholder="Digite a sua senha" required>
+                </div>
+                 <!--Fechando a terceira div input-box-->
+                <div class="input-box">
+                    <!--Label é responsável pela pergunta do input para o usuário-->
+                    <label for="confirm_password">Confirme a sua senha:</label>
+                       <!--O input é utilizado para o usuário mandar as informações-->
+                    <input id="confirm_password" type="password" name="confirm_password" placeholder="Confirme a sua senha" required>
+                </div>
+            <!--Fechando a quarta div input-box-->
+              </div>
+               <!--Abrindo a a div para mostrar o text-area--->
+              <div class="container-motivo-exclusao">
+                 <!--A label irá mostrar o pergunta-->
+                <label>Qual o motivo levou você a deletar a sua conta?</label>
+                 <!--O textarea será responsável para mostrar as informações-->
+                <textarea name="message" rows="6" placeholder="Digite sua mensagem" required></textarea>
+                 <!--O button será utilizado para enviar a a validação do formulário de exclusão-->
+                <button type="submit" class="btn-excluir">Enviar</button>
+              </div>
+               <!--Fechando a quarta div -->
+            </form>
+             <!--Fechamento da tag form -->
+        </div>
+         <!--Fechamento da div maior chamada container-delete-->
+    </section>
+     <!--Fechamento da sessão responsavel pelo delete do usuário-->
+</body>
+ <!--Fechamento a tag body-->
+</html>
+ <!--Fechamento da tag HTML-->

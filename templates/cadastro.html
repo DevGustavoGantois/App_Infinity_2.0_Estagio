@@ -1,0 +1,187 @@
+<!--
+CABEÇALHO:
+---------------------------------------------------------------------
+ARQUIVO: templates/login.html
+---------------------------------------------------------------------
+AUTOR DO CÓDIGO: GUSTAVO GANTOIS CARIA CARVALHO
+---------------------------------------------------------------------
+DATA DA REALIZAÇÃO DO CÓDIGO: 19/05/2024 
+----------------------------------------------------------------------
+DEPENDÊNCIAS:
+
+HTML SEMÂNTICO 
+UTILIZAÇÃO DE FORMULÁRIO
+Link com o backend junto a isso com o banco de dados SQLAlchemy
+Flask para ligar as rotas do HTML
+
+DESCRIÇÃO: Criação de um formulário com method POST linkado com os estilos (styles.css) HTML para dar estilos a cada página/sessão, este formulário
+é responsavel pelo cadastro do usuário do usuário do aplicativo, junto a isso ele armazena este usuário no banco de dados após o cadastro.
+-->
+<!DOCTYPE html>
+<!--Mostrando que a linguagem da página sera pt-br-->
+<html lang="pt-br">
+<!--Sessão head do site, responsável pelo cabeçalho onde ficaram os links sobre cada coisa será utilizada ao longo do html-->
+<head>
+     <!--charset=UTF-8 para rodar na maioria dos navegadores-->
+    <meta charset="UTF-8">
+    <!--Mostrando o meta da aplicação -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!--Linkando o arquivo cs/styles.css com o html através do Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+     <!--Título da página que está sendo renderizada, este título ficará no canto esquerdo na web-->
+    <title>Página de Cadastro - Infinity App 2.0</title>
+</head>
+ <!--Fechamento da tag head-->
+  <!--Abrindo a tag body para botar o corpo do site dentro dele-->
+<body>
+     <!--A div container será um container maior que irá conter informações sobre o cadastro -->
+    <div class="container">
+     <!--A section será a sessão do container de cadastro onde terá a imagem e o formulário -->
+    <section class="container-cadastro">
+         <!--A div form-image será o container onde estará a imagem-->
+        <div class="form-image">
+             <!--A tag img mostrará a imagem e com o src iremos linkar a imagem.-->
+            <img src="{{ url_for('static', filename='images/imgFundoInfinity.jpg') }}" alt="" class="img">
+        </div>
+         <!--Fechamento da tag div form-image-->
+          <!--Abrindo a div o container onde ficará a classe form -->
+        <div class="form">
+             <!--A tag form é onde ficará o formulário, terá o action que será o caminho da página e o método será o POST para linkar o front-end e os seus dados com o back-end -->
+            <form action="/cadastro" method="POST">
+                 <!--A div form header terá o cabeçalho do formulário dentro de uma div (container) -->
+                <div class="form-header">
+                     <!--A div container terá o título de cadastro -->
+                    <div class="title-cadastro">
+                         <!--A tag h1 terá o título "Cadastra-se" h1 e junto a isso o span para mudar a cor dele na estilização css -->
+                        <h1 class="title">Cadastre-<span>se</span></h1>
+                    </div>
+                     <!--Fechamento a tag div do form-header -->
+                      <!--A div de cadastro terá botão clicando em continuar para voltar para a pagina de login-->
+                    <div class="cadastro-btn">
+                         <!--A tag button será um botão e a tag a irá redirecionar o link da url terá o redirecionamento para o login através do flask-->
+                        <button><a href="{{ url_for('login') }}">Continuar</a></button>
+                    </div>
+                     <!--Fechamento do container do botão de cadastro-->
+                </div>
+                 <!--Fechamento da tag form-header-->
+                <div class="input-group-cadastro">
+                 <!--Abrindo a div onde terá o input-box do cadastro onde terá o label que será a pergunta e o input para pegar as informações passadas pelo usuário-->
+                    <div class="input-box-cadastro">
+                         <!--Label é responsável pela pergunta do input para o usuário-->
+                        <label for="username">Usuário</label>
+                         <!--O input é utilizado para o usuário mandar as informações-->
+                        <input type="text" id="username" name="username" placeholder="Username" required>
+                    </div>
+                     <!--Fechamento do container input-box-cadastro -->
+                      <!--Abrindo a div onde terá o input-box do cadastro onde terá o label que será a pergunta e o input para pegar as informações passadas pelo usuário-->
+                    <div class="input-box-cadastro">
+                         <!--Label é responsável pela pergunta do input para o usuário-->
+                        <label for="name">Nome Completo</label>
+                        <!--O input é utilizado para o usuário mandar as informações-->
+                        <input type="text" id="name" name="name" placeholder="Nome" required>
+                    </div>
+                     <!--Fechamento do container input-box-cadastro -->
+                      <!--Abrindo a div onde terá o input-box do cadastro onde terá o label que será a pergunta e o input para pegar as informações passadas pelo usuário-->
+                    <div class="input-box-cadastro">
+                          <!--Label é responsável pela pergunta do input para o usuário-->
+                        <label for="email">E-mail</label>
+                           <!--O input é utilizado para o usuário mandar as informações-->
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                      <!--Fechamento do container input-box-cadastro -->
+                     <!--Abrindo a div onde terá o input-box do cadastro onde terá o label que será a pergunta e o input para pegar as informações passadas pelo usuário-->
+                    <div class="input-box-cadastro">
+                         <!--Label é responsável pela pergunta do input para o usuário-->
+                        <label for="phone">Celular</label>
+                         <!--O input é utilizado para o usuário mandar as informações-->
+                        <input type="tel" id="phone" name="phone" placeholder="(XX) XXXX" required>
+                    </div>
+                    <!--Fechamento do container input-box-cadastro -->
+                      <!--Abrindo a div onde terá o input-box do cadastro onde terá o label que será a pergunta e o input para pegar as informações passadas pelo usuário-->
+                    <div class="input-box-cadastro">
+                        <!--Label é responsável pela pergunta do input para o usuário-->
+                        <label for="password">Senha</label>
+                         <!--O input é utilizado para o usuário mandar as informações-->
+                        <input type="password" id="password" name="password" placeholder="Senha" required>
+                    </div>
+                    <!--Fechamento do container input-box-cadastro -->
+                       <!--Abrindo a div onde terá o input-box do cadastro onde terá o label que será a pergunta e o input para pegar as informações passadas pelo usuário-->
+                    <div class="input-box-cadastro">
+                                <!--Label é responsável pela pergunta do input para o usuário-->
+                        <label for="confirm_password">Confirme sua senha</label>
+                          <!--O input é utilizado para o usuário mandar as informações-->
+                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Senha" required>
+                    </div>
+                        <!--Fechamento do container input-box-cadastro -->
+                    <!--Abrindo a div onde terá o input-box do cadastro onde terá o label que será a pergunta e o input para pegar as informações passadas pelo usuário-->
+                    <div class="input-box-cadastro">
+                        <!--Label é responsável pela pergunta do input para o usuário-->
+                        <label for="address">Endereço</label>
+                        <!--O input é utilizado para o usuário mandar as informações-->
+                        <input type="text" id="address" name="address" placeholder="Endereço" required>
+                    </div>
+                      <!--Fechamento do container input-box-cadastro -->
+                     <!--Abrindo a div onde terá o input-box do cadastro onde terá o label que será a pergunta e o input para pegar as informações passadas pelo usuário-->
+                    <div class="input-box-cadastro">
+                        <!--Label é responsável pela pergunta do input para o usuário-->
+                        <label for="born_date">Data de Nascimento</label>
+                        <!--O input é utilizado para o usuário mandar as informações-->
+                        <input type="date" id="born_date" name="born_date" placeholder="Data de Nascimento" required>
+                    </div>
+                       <!--Fechamento do container input-box-cadastro -->
+                </div>
+                <!--Fechamento do container input-group-cadastro -->
+                <!--Abrindo o container gender-inputs onde terá os inputs de gênero -->
+                <div class="gender-inputs">
+                       <!--Abrindo a div (container) onde terá o título de gênero -->
+                    <div class="gender-title">
+                           <!--O titulo do gênero -->
+                        <h6>Gênero:</h6>
+                    </div>
+                    <!--Fechando a div (container) onde terá o título de gênero -->
+                       <!--Abrindo a div (container) onde terá as divs menores com os inputs-->
+                    <div class="gender-group">
+                           <!--Abrindo a div (container) onde terá o input para pegar os dados do formulário a label para a pergunta-->
+                        <div class="gender-input">
+                             <!--O input é utilizado para o usuário mandar as informações-->
+                            <input type="radio" id="female" name="gender" value="female" class="radio-female" required>
+                             <!--Label é responsável pela pergunta do input para o usuário-->
+                            <label for="female">Feminino</label>
+                        </div>
+                        <!--Abrindo a div (container) onde terá as divs menores com os inputs-->
+                        <div class="gender-input">
+                             <!--O input é utilizado para o usuário mandar as informações-->
+                            <input type="radio" id="male" name="gender" value="male" class="radio-male" required>
+                             <!--Label é responsável pela pergunta do input para o usuário-->
+                            <label for="male">Masculino</label>
+                        </div>
+                         <!--Abrindo a div (container) onde terá o input para pegar os dados do formulário a label para a pergunta-->
+                        <div class="gender-input">
+                             <!--O input é utilizado para o usuário mandar as informações-->
+                            <input type="radio" id="others" name="gender" value="others" class="others" required>
+                             <!--Label é responsável pela pergunta do input para o usuário-->
+                            <label for="others" class="label-others">Outros</label>
+                        </div>
+                         <!--Fechamento do container gender-inputs -->
+                    </div>
+                     <!--Fechamento da tag gender-group-->
+                </div>
+                 <!--Fechamento da tag gender-inputs-->
+                <!--Abrindo (container) div, onde terá o o botão de Entrar-->
+                <div class="btn-cadastro-entrar">
+                        <!--Botão do tipo submit para Entrar no aplicativo -->
+                    <button type="submit">Entrar</button>
+                </div>
+                <!--Fechamento da div(container) btn-cadastro-entrar-->
+            </form>
+            <!--Fechamento da tag form-->
+        </div>
+        <!--Fechamento da tag div com a classe form-->
+    </section>
+    <!--Fechamento da tag section com a classe container-cadastro -->
+</div>
+<!--Fechamento da classe container -->
+</body>
+<!--Fechamento da tag body-->
+</html>
+<!--Fechamento da tag HTML-->

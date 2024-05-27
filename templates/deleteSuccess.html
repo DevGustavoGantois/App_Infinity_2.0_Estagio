@@ -1,0 +1,55 @@
+<!--
+CABEÇALHO:
+---------------------------------------------------------------------
+ARQUIVO: templates/deleteSuccess.html
+---------------------------------------------------------------------
+AUTOR DO CÓDIGO: GUSTAVO GANTOIS CARIA CARVALHO
+---------------------------------------------------------------------
+DATA DA REALIZAÇÃO DO CÓDIGO: 19/05/2024 
+----------------------------------------------------------------------
+DEPENDÊNCIAS:
+
+HTML SEMÂNTICO 
+Flask para ligar as rotas do HTML
+Biblioteca de ícones -> Font Awesome 
+
+DESCRIÇÃO: HTML mostrando que a conta foi deletada com sucesso junto a isso link dos estilos (styles.css) para deixar a página com um design melhor 
+e o link do font awesome para exibir o ícone
+
+-->
+
+<!DOCTYPE html>
+<!--Mostrando que a linguagem da página sera pt-br-->
+<html lang="pt-br">
+<!--Sessão head do site, responsável pelo cabeçalho onde ficaram os links sobre cada coisa será utilizada ao longo do html-->
+<head>
+     <!--charset=UTF-8 para rodar na maioria dos navegadores-->
+    <meta charset="UTF-8">
+     <!--Mostrando o meta da aplicação -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link para o font-awesome para utilizar os links que estão no projeto -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Linkando o arquivo cs/styles.css com o html através do Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!--Título da página que está sendo renderizada, este título ficará no canto esquerdo na web-->
+    <title>Mensagem de Delete</title>
+</head>
+<!--Tag body, onde ficará o corpo do site contendo todas as informações do site deleteSuccess Infinity 2.0-->
+<body>
+    <!--Utiliza a tag div com um container para mostrar o as informações-->
+    <div class="container-delete-success">
+        <!--Tag h1 para mostrar a frase de conta deletada com sucesso -->
+        <h1 class="title-delete">Sua conta foi deletada com sucesso!</h1>
+        <!--Tag i terá o ícone do font awesome-->
+        <i class="fa-regular fa-face-sad-tear"></i>
+        <!--Esta div é o container onde estará o botão voltar, que estará linkado redirecionando para o login-->
+        <div class="container-button-voltar">
+            <button><a href="{{ url_for('login') }}">Voltar</a></button>
+        </div>
+        <!--Fechando a Div do botão-->
+    </div>
+    <!--Fechamento da div que fecha o container de deletar com sucesso-->
+</body>
+<!--Fechamento da tag body-->
+</html>
+<!--Fechamento da tag HTML-->

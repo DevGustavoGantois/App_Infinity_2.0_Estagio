@@ -1,0 +1,977 @@
+/*
+CABEÇALHO:
+---------------------------
+ARQUIVO: css/styles.css 
+--------------------------------------------------------------------------------------
+AUTOR DO CÓDIGO: GUSTAVO GANTOIS CARIA CARVALHO
+-------------------------------------------------------------------------------------
+DATA DA CRIAÇÃO DOS PRINCIPAIS ESTILOS DO SITE: 19/05/2024 
+---------------------------------------------------------------------------------------
+VERSÃO: 2.0
+------------
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Resetando margens, paddings, e aplicando box-sizing: border-box a todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif; /* Definindo a fonte padrão para todos os elementos */
+}
+
+/* Estilo geral do body */
+body {
+    background-color: #1c1919; /* Cor de fundo do body */
+    color: #fff; /* Cor do texto */
+}
+
+/* Estilizando a Sessão de Login */
+.login {
+    display: flex; /* Definindo layout flex */
+    margin-top: 15rem; /* Margem superior */
+    margin-left: 2rem; /* Margem esquerda */
+    gap: 18rem; /* Espaçamento entre os itens do flex */
+    box-shadow: 10px 10px 10px 10px #dd3333; /* Sombra da caixa */
+    width: 95%; /* Largura da sessão de login */
+    height: 24rem; /* Altura da sessão de login */
+}
+
+/* Estilizando o título da sessão de login */
+.login-title {
+    margin-top: 12rem; /* Margem superior */
+    margin-bottom: 1rem; /* Margem inferior */
+    font-size: 2rem; /* Tamanho da fonte */
+    text-align: center; /* Alinhamento do texto */
+}
+
+/* Estilizando o Container Title Description */
+.title-welcome {
+    font-size: 2rem; /* Tamanho da fonte */
+    margin-bottom: 2rem; /* Margem inferior */
+}
+
+.title-welcome span {
+    color: #dd3333; /* Cor do texto */
+}
+
+.container-title-description {
+    margin-left: 36rem; /* Margem esquerda */
+    margin-top: 4rem; /* Margem superior */
+}
+
+.description {
+    width: 23rem; /* Largura da descrição */
+}
+
+/* Estilizando o Container do Login */
+.form-login {
+    display: flex; /* Definindo layout flex */
+    justify-content: center; /* Centralizando itens */
+    flex-direction: column; /* Colocando itens em coluna */
+}
+
+.container-login {
+    margin-top: -12rem; /* Margem superior negativa */
+    margin-left: 5rem; /* Margem esquerda */
+}
+
+form label {
+    margin-top: 1.5rem; /* Margem superior */
+}
+
+input {
+    background: transparent; /* Fundo transparente */
+    border-radius: 16px; /* Bordas arredondadas */
+    outline: none; /* Sem contorno ao focar */
+    color: #fff; /* Cor do texto */
+    height: 3rem; /* Altura do input */
+    width: 14rem; /* Largura do input */
+}
+
+.form-login input {
+    box-shadow: 1px 1px 6px #dd3333;
+    border: none;
+}
+
+.form-login input:focus-visible {
+    outline: 1px solid #fc2323; /* Adiciona um contorno ao receber foco */
+}
+
+input::placeholder {
+    text-align: center; /* Centralizando o texto do placeholder */
+    justify-content: center; /* Centralizando o conteúdo do placeholder */
+    margin-left: 9rem; /* Margem esquerda do placeholder */
+}
+
+.error-message {
+    font-size: 10px; /* Tamanho da fonte da mensagem de erro */
+    text-align: center; /* Alinhamento central */
+    margin-top: 2px; /* Margem superior */
+}
+
+.container-btn button {
+    width: 9rem; /* Largura do botão */
+    margin-left: 2rem; /* Margem esquerda */
+    border: none; /* Sem borda */
+    border-radius: 12rem; /* Bordas arredondadas */
+    margin-top: 1rem; /* Margem superior */
+    margin-bottom: 1rem; /* Margem inferior */
+}
+
+button {
+    padding: 0.3rem; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+    transition: 1s; /* Transição suave de 1 segundo */
+    background: #dd3333; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto */
+}
+
+button:hover {
+    background: #ff5353; /* Cor de fundo ao passar o mouse */
+}
+
+a {
+    font-size: 12px; /* Tamanho da fonte do link */
+    color: #fff; /* Cor do link */
+}
+
+.excluir-conta {
+    margin-top: 0.8rem; /* Margem superior */
+    text-align: center; /* Alinhamento central */
+}
+
+/*=================================ESTILIZAÇÃO DA PÁGINA DE CADASTRO:===================================================================================*/
+
+/* Container principal */
+.container {
+    width: 100%; /* Define a largura */
+    height: 95vh; /* Define a altura */
+    display: flex; /* Usa um layout flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+/* Container para a seção de cadastro */
+.container-cadastro {
+    width: 90%; /* Define a largura */
+    height: 100vh; /* Define a altura */
+    display: flex; /* Usa um layout flexível */
+    box-shadow: 5px 5px 5px #dd3333; /* Adiciona uma sombra */
+    margin-top: 8rem; /* Margem superior */
+    margin-left: 5rem; /* Margem esquerda */
+}
+
+/* Imagem do formulário */
+.form-image {
+    width: 50%; /* Define a largura */
+    display: flex; /* Usa um layout flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 1rem; /* Adiciona preenchimento */
+}
+
+/* Título */
+.title {
+    font-size: 2rem;
+}
+
+.title span {
+    color: #dd3333; /* Cor do texto */
+    font-size: 2rem; /* Tamanho da fonte */
+}
+
+/* Imagem dentro do formulário */
+.form-image img {
+    width: 64rem; /* Define a largura */
+    height: 47rem; /* Define a altura */
+}
+
+/* Estilo do formulário de cadastro */
+.form {
+    margin-top: 12rem; /* Margem superior */
+    width: 80%; /* Define a largura */
+    display: flex; /* Usa um layout flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    flex-direction: column; /* Define a direção dos itens */
+    padding: 3rem; /* Adiciona preenchimento */
+    height: 33rem; /* Define a altura */
+}
+
+/* Cabeçalho do formulário */
+.form-header {
+    margin-bottom: 3rem; /* Margem inferior */
+    display: flex; /* Usa um layout flexível */
+    justify-content: space-between; /* Distribui os itens */
+}
+
+/* Botão de cadastro */
+.cadastro-btn {
+    display: flex; /* Usa um layout flexível */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.cadastro-btn button {
+    border: none; /* Remove a borda */
+    padding: 0.4rem 1rem; /* Adiciona preenchimento */
+    border-radius: 5px; /* Define as bordas arredondadas */
+    cursor: pointer; /* Define o cursor do mouse */
+    padding: 1rem;
+}
+
+button a {
+    text-decoration: none; /* Remove a decoração do link */
+    font-weight: 500; /* Define o peso da fonte */
+    font-size: 1rem;
+}
+
+/* Linha após o título */
+.form-header h1::after {
+    content: ''; /* Adiciona conteúdo */
+    display: block; /* Exibe como bloco */
+    width: 5rem; /* Define a largura */
+    height: 0.3rem; /* Define a altura */
+    background-color: #dd3333; /* Cor de fundo */
+    margin: 0 auto; /* Margem automática nas laterais */
+    position: absolute; /* Posição absoluta */
+    border-radius: 10px; /* Define as bordas arredondadas */
+}
+
+/* Grupo de entrada de dados */
+.input-group-cadastro {
+    display: flex; /* Usa um layout flexível */
+    flex-wrap: wrap; /* Permite quebrar a linha */
+    justify-content: space-between; /* Distribui os itens */
+    padding: 3rem; /* Adiciona preenchimento */
+}
+
+/* Caixa de entrada de dados */
+.input-box-cadastro {
+    display: flex; /* Usa um layout flexível */
+    flex-direction: column; /* Define a direção dos itens */
+    margin-bottom: 1.1rem; /* Margem inferior */
+}
+
+.input-box-cadastro input {
+    border: none; /* Remove a borda */
+    border-radius: 10px; /* Define as bordas arredondadas */
+    box-shadow: 1px 1px 6px #dd3333; /* Adiciona uma sombra */
+    margin: 0.3rem 0; /* Margem */
+    width: 14rem; /* Define a largura */
+}
+
+.input-box-cadastro input:focus-visible {
+    outline: 1px solid #fc2323; /* Adiciona um contorno ao receber foco */
+}
+
+.input-box-cadastro label,
+.gender-title h6 {
+    font-size: 0.75rem; /* Tamanho da fonte */
+    font-weight: 600; /* Define o peso da fonte */
+    color: white; /* Cor do texto */
+}
+
+.gender-title h6 {
+    font-size: 1.3rem; /* Tamanho da fonte */
+    margin-left: 2rem; /* Margem esquerda */
+}
+
+.input-box-cadastro::placeholder {
+    color: #dd3333; /* Cor do texto do espaço reservado */
+}
+
+/* Grupo de gênero */
+.gender-group {
+    display: flex; /* Usa um layout flexível */
+    padding: 0rem; /* Preenchimento */
+    width: 1rem; /* Define a largura */
+}
+
+/* Inputs de gênero */
+.gender-inputs {
+    display: flex; /* Usa um layout flexível */
+    align-items: center; /* Centraliza verticalmente */
+    margin-top: 0; /* Margem superior */
+    margin-left: 10rem;
+}
+
+.gender-input input {
+    height: 12px; /* Altura do input */
+}
+
+.gender-input label {
+    margin-bottom: 4rem; /* Margem inferior */
+    font-size: 0.81rem; /* Tamanho da fonte */
+    font-weight: 600; /* Define o peso da fonte */
+    color: white; /* Cor do texto */
+    margin-left: 5rem; /* Margem esquerda */
+}
+
+/* Botão de entrar no formulário de cadastro */
+.btn-cadastro-entrar button  {
+    width: 100%; /* Define a largura */
+    margin-top: 2rem; /* Margem superior */
+    border: none; /* Remove a borda */
+    padding: 0.62rem; /* Adiciona preenchimento */
+    border-radius: 5px; /* Define as bordas arredondadas */
+    cursor: pointer; /* Define o cursor do mouse */
+}
+
+
+/*================= ESTILIZANDO A SESSÃO DE EXCLUIR CONTA DO USUÁRIO ============================================================*/
+
+/* Título da seção de exclusão */
+.title-delete {
+    text-align: center; /* Centraliza o texto */
+    margin-top: 4rem; /* Define a margem superior */
+    font-size: 2.5rem; /*Define o tamanho da letra */
+}
+
+/* Estilo do texto dentro do título de exclusão */
+.title-delete span {
+    color: #dd3333; /* Define a cor do texto */
+}
+
+/* Descrição da seção de exclusão */
+.description-delete {
+    margin-top: 1rem; /* Define a margem superior */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Formulário de exclusão */
+.form-delete {
+    display: flex; /* Usa um layout flexível */
+    flex-direction: column; /* Define a direção dos itens */
+    justify-content: center; /* Centraliza verticalmente */
+    align-self: center; /* Alinha consigo mesmo */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Formulário de exclusão (repetido) */
+.form-delete {
+    display: flex; /* Usa um layout flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    flex-direction: column; /* Define a direção dos itens */
+    padding: 3rem; /* Adiciona preenchimento */
+}
+
+/* Grupo de entrada de dados */
+.input-group {
+    display: flex; /* Usa um layout flexível */
+    flex-wrap: wrap; /* Permite quebrar a linha */
+    justify-content: space-between; /* Distribui os itens */
+    gap: 6px; /* Define o espaçamento entre os itens */
+    padding: 1rem 0; /* Adiciona preenchimento */
+}
+
+/* Caixa de entrada de dados */
+.input-box {
+    display: flex; /* Usa um layout flexível */
+    flex-direction: column; /* Define a direção dos itens */
+    margin-bottom: 1.1rem; /* Define a margem inferior */
+}
+
+.form-delete input {
+    box-shadow: 1px 1px 6px #dd3333;
+    border: none;
+}
+
+.form-delete input:focus-visible {
+    outline: 1px solid #fc2323; /* Adiciona um contorno ao receber foco */
+}
+
+/* Entrada de dados */
+.input-box input {
+    margin: 0.6rem 0; /* Define a margem */
+    padding: 0.8rem 1.2rem; /* Define o preenchimento */
+    width: 22rem; /* Define a largura */
+}
+
+/* Container do motivo de exclusão */
+.container-motivo-exclusao {
+    background-color: #090909; /* Cor de fundo */
+    padding: 20px; /* Adiciona preenchimento */
+    border-radius: 10px; /* Define as bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+    text-align: center; /* Centraliza o texto */
+    width: 100%; /* Define a largura */
+    max-width: 500px; /* Define a largura máxima */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    margin-top: 2rem; /* Define a margem superior */
+}
+
+/* Label dentro do container de exclusão */
+.container-motivo-exclusao label {
+    display: block; /* Exibe como bloco */
+    margin-bottom: 10px; /* Define a margem inferior */
+    font-size: 1.2em; /* Define o tamanho da fonte */
+}
+
+/* Área de texto dentro do container de exclusão */
+.container-motivo-exclusao textarea {
+    width: 100%; /* Define a largura */
+    max-width: 100%; /* Define a largura máxima */
+    padding: 10px; /* Adiciona preenchimento */
+    border: 1px solid #ccc; /* Define a borda */
+    border-radius: 5px; /* Define as bordas arredondadas */
+    box-sizing: border-box; /* Define o modelo de caixa */
+    resize: none; /* Impede a redimensionamento */
+    background-color: #f9f9f9; /* Cor de fundo */
+}
+
+/* Botão de exclusão */
+.btn-excluir {
+    margin-top: 15px; /* Define a margem superior */
+    padding: 10px 20px; /* Adiciona preenchimento */
+    background-color: #dd3333; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Define as bordas arredondadas */
+    cursor: pointer; /* Define o cursor do mouse */
+}
+
+/* Efeito de hover para o botão de exclusão */
+.btn-excluir:hover {
+    background-color: #e60000; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo para link dentro do botão de exclusão */
+.btn-excluir a {
+    text-decoration: none; /* Remove a decoração do link */
+}
+
+/*=================ESTILIZANDO A PÁGINA DE CONTA DELETADA COM SUCESSO============================================================== */
+
+/* Container para exibir uma mensagem de sucesso após exclusão */
+.container-delete-success {
+    margin-top: 18rem; /* Define a margem superior */
+}
+
+/* Ícone dentro do container de sucesso */
+.container-delete-success i {
+    display: flex; /* Usa um layout flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    text-align: center; /* Alinha o texto ao centro */
+    align-items: center; /* Centraliza verticalmente */
+    margin-top: 5rem; /* Define a margem superior */
+    font-size: 3rem; /* Define o tamanho do ícone */
+    color: #dd3333; /* Define a cor do ícone */
+}
+
+/* Container para o botão "Voltar" */
+.container-button-voltar {
+    align-items: center; /* Centraliza verticalmente */
+    display: flex; /* Usa um layout flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    margin-top: 2rem; /* Define a margem superior */
+}
+
+/* Estilo do botão "Voltar" */
+.container-button-voltar button {
+    border-radius: 15px; /* Define as bordas arredondadas */
+    padding: 10px; /* Adiciona preenchimento */
+    width: 10rem; /* Define a largura */
+}
+
+/* Estilo para o texto dentro do botão "Voltar" */
+.container-button-voltar a {
+    font-size: 18px; /* Define o tamanho da fonte */
+}
+
+
+/*===========================ESTILIZANDO A SESSÃO DO APP =====================================*/
+
+/* Título da aplicação */
+.title-app {
+    text-align: center; /* Alinha o texto ao centro */
+    margin-top: 3rem; /* Define a margem superior */
+}
+
+/* Estilo para o texto dentro do título da aplicação */
+.title-app span {
+    color: #dd3333; /* Define a cor do texto */
+}
+
+/* Container para o mapa */
+.container-map {
+    text-align: center; /* Alinha o conteúdo ao centro */
+    margin-top: 2rem; /* Define a margem superior */
+    box-shadow: 5px 5px 5px #e60000; /* Adiciona uma sombra */
+    width: 95%; /* Define a largura */
+    margin-left: 3rem; /* Define a margem esquerda */
+}
+
+/* Subtítulo da aplicação */
+.subtitle-app {
+    text-align: center; /* Alinha o texto ao centro */
+    margin-top: 1rem; /* Define a margem superior */
+    margin-bottom: 2rem; /* Define a margem inferior */
+}
+
+/* Estilo para o elemento com o id "map" */
+#map {
+    width: 95%; /* Define a largura */
+}
+
+/* Formulário da aplicação */
+.form-app {
+    margin-top: 4rem; /* Define a margem superior */
+    justify-content: center; /* Centraliza horizontalmente */
+    display: flex; /* Usa um layout flexível */
+    gap: 3rem; /* Define o espaçamento entre os elementos */
+}
+
+.form-app input {
+    box-shadow: 1px 1px 6px #dd3333; /*Adiciona uma sombra ao input*/
+    border: none; /*Tira a borda do input */
+}
+
+.form-app input:focus-visible {
+    outline: 1px solid #fc2323; /* Adiciona um contorno ao receber foco */
+}
+
+/* Botão para enviar a distância */
+.btn-calcular-rota {
+    background: #dd3333; /* Define a cor de fundo */
+    cursor: pointer; /* Define o cursor do mouse */
+    transition: 0.5s; /* Adiciona uma transição */
+    border: none;
+    border-radius: 10px;
+}
+
+/* Efeito de hover para o botão de enviar distância */
+.btn-calcular-rota:hover {
+    background: #e60000; /* Altera a cor de fundo ao passar o mouse */
+}
+
+/* Define o estilo para a classe container-resposta.
+   Esta classe é responsável por posicionar e alinhar elementos de resposta.
+   Ela define margens, alinhamento de texto, exibição flexível e espaçamento entre elementos. */
+   .container-resposta {
+    margin-top: 4rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* Define o estilo para os elementos span dentro da classe container-resposta.
+   Estes elementos têm texto em vermelho escuro, em negrito e em caixa alta. */
+.container-resposta span {
+    color: #d33333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Define o estilo para o elemento com o id frase.
+   Este elemento tem texto em branco, em negrito e em caixa alta, alinhado ao centro e com margem inferior. */
+#frase {
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+
+/*============RESPONSIVIDADE PARA TELAS MENORES E DISPOSITÍVOS=========================*/
+
+/* Media query para telas com largura máxima de 1680px */
+@media (max-width: 1920px) {
+
+    /*Estilizando a sessão de login */
+    .container-title-description {
+        margin-left: 18rem;
+    }
+
+    /*Estilizando a parte de gêneros do cadastro */
+    .gender-inputs {
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 1680px) {
+
+    /* Ajuste na margem esquerda do container de título e descrição */
+    .container-title-description {
+        margin-left: 13rem;
+    }
+
+    /* Estilizando a tela de cadastro até 1680px */
+    .container-cadastro {
+        width: 90%; /* Define a largura */
+    }
+
+    /* Redimensionando a imagem dentro do formulário */
+    .form-image img {
+        width: 30rem; /* Define a largura */
+    }
+
+    .gender-inputs {
+        margin-left: -1rem;
+    }
+}
+
+/* Media query para telas com largura máxima de 1440px */
+@media (max-width: 1440px) {
+    /*Ajustes na tela de login */
+    .login {
+        gap: 9rem;
+    }
+
+    /* Ajustes na margem do container de título e descrição */
+    .container-title-description {
+        margin-top: 2rem; /* Define a margem superior */
+        margin-left: 6rem; /* Define a margem esquerda */
+    }
+
+    /* Estilizando a tela de cadastro até 1440px */
+    .container-cadastro {
+        margin-top: -1rem;
+        width: 90%; /* Define a largura */
+        height: 51rem; /* Define a altura */
+        margin-left: 1rem;
+    }
+
+    /* Oculta a imagem dentro do formulário */
+    .form-image  {
+       display: none; /* Oculta o elemento */
+    }
+
+    /* Ajuste na margem esquerda do formulário */
+    .form {
+        margin-left: 12rem; /* Define a margem esquerda */
+    }
+
+    /* Alinha o texto do input de gênero ao centro */
+    .gender-input label {
+       text-align: center; /* Alinha o texto ao centro */
+    }
+}
+
+/* Media query para telas com largura máxima de 1064px */
+@media (max-width: 1064px) {
+    /* Ajustes no tamanho do container */
+    .container {
+        width: 90%; /* Define a largura */
+        height: auto; /* Define a altura automática */
+    }
+
+    /* Ajustes no grupo de entrada de dados do cadastro */
+    .input-group-cadastro {
+        flex-direction: column; /* Define a direção dos itens */
+        overflow-y: scroll; /* Adiciona uma barra de rolagem vertical */
+        flex-wrap: nowrap; /* Impede a quebra de linha */
+        max-height: 10rem; /* Define a altura máxima */
+        padding-right: 5rem; /* Define o preenchimento à direita */
+    }
+
+    /* Ajustes no grupo de gênero */
+    .gender-inputs {
+        margin-top: 2rem; /* Define a margem superior */
+    }
+
+    /* Ajustes na direção do grupo de gênero */
+    .gender-group {
+        flex-direction: column; /* Define a direção dos itens */
+    }
+
+    /* Ajustes na margem superior do input de gênero */
+    .gender-input {
+        margin-top: 0.5rem; /* Define a margem superior */
+    }
+}
+
+/* Media query para telas com largura máxima de 1024px */
+@media (max-width: 1024px) {
+
+    /* Ajuste no espaçamento entre os elementos da seção de login */
+    .login {
+        gap: 9.5rem; /* Define o espaçamento entre os elementos */
+    }
+
+    /* Ajuste no layout do título de boas-vindas */
+    .title-welcome {
+        display: flex; /* Usa um layout flexível */
+        flex-direction: column; /* Define a direção dos itens */
+    }
+
+    /* Ajuste na margem esquerda do container de título e descrição */
+    .container-title-description {
+        margin-left: 1rem; /* Define a margem esquerda */
+    }
+
+    /* Ajuste na margem esquerda do container de login */
+    .container-login {
+        margin-left: 1rem; /* Define a margem esquerda */
+    }
+}
+
+/* Media query para telas com largura máxima de 926px */
+@media (max-width: 926px) {
+    /* Ajustes na seção de login */
+    .login {
+        margin-top: 2rem; /* Define a margem superior */
+        display: flex; /* Usa um layout flexível */
+        flex-direction: column; /* Define a direção dos itens */
+        height: 45rem; /* Define a altura */
+        width: 24.5rem; /* Define a largura */
+        margin-left: 0.8rem; /* Define a margem esquerda */
+        gap: 1.2rem;
+    }
+
+    /* Ajuste no alinhamento do texto dentro do container de título e descrição */
+    .container-title-description {
+        text-align: center; /* Centraliza o texto */
+    }
+
+    /* Ajuste no alinhamento e margem do label dentro do formulário */
+    form label {
+        text-align: center; /* Centraliza o texto */
+        margin-bottom: 1rem; /* Define a margem inferior */
+    }
+
+    /* Ajuste na largura do input dentro do formulário */
+    input {
+        width: 18rem; /* Define a largura */
+        margin-left: 3rem; /* Define a margem esquerda */
+    }
+
+    /* Ajuste na margem esquerda do botão dentro do container */
+    .container-btn button {
+        margin-left: 7rem; /* Define a margem esquerda */
+    }
+
+    /* Ajuste na margem esquerda do placeholder do input */
+    input::placeholder {
+        margin-left: 0.2rem; /* Define a margem esquerda */
+    }
+
+    /* Ajuste no alinhamento do texto dentro do link */
+    a {
+        text-align: center; /* Centraliza o texto */
+    }
+
+    /* Ajustes no tamanho e margem do botão de exclusão */
+    .btn-excluir {
+       width: 4rem; /* Define a largura */
+    }
+
+    /* Ajuste na margem esquerda do link dentro do botão de exclusão */
+    .btn-excluir a {
+        margin-left: -0.4rem; /* Define a margem esquerda */
+    }
+
+    /* Estilizando a Página de Cadastro */
+
+    .container {
+        width: 108%;
+    }
+
+    .title-cadastro {
+        margin-top: 0rem; /*Ajustes na margem do topo*/
+    }
+
+    /* Ajuste na largura do container de cadastro */
+    .container-cadastro {
+        width: 78%; /* Define a largura */
+    }
+
+    /* Ajuste no tamanho do botão dentro do container de cadastro */
+    .cadastro-btn button {
+        width: 7rem; /* Define a largura */
+    }
+
+    /* Ajuste na margem esquerda do link dentro do container de cadastro */
+    .cadastro-btn a {
+        margin-left: 0.2rem; /* Define a margem esquerda */
+    }
+
+    /* Ajuste na margem esquerda do formulário */
+    .form {
+        margin-top: 6rem; /*Define a margem do topo */
+        margin-left: 2.5rem; /* Define a margem esquerda */
+    }
+
+    /* Ajuste na margem esquerda do botão dentro do container */
+    .btn-cadastro-entrar {
+        margin-left: 4rem; /* Define a margem esquerda */
+    }
+
+    /* Ajuste no tamanho do botão dentro do container */
+    .btn-cadastro-entrar button {
+        width: 8rem; /* Define a largura */
+    }
+
+    /* Ajuste na margem esquerda do link dentro do container */
+    .btn-cadastro-entrar a {
+        margin-left: 0.5rem; /* Define a margem esquerda */
+    }
+
+    .gender-inputs {
+        margin-left: -3rem; /*Define a margem a esquerda */
+    }
+
+    /* Ajuste na margem esquerda do título do gênero */
+    .gender-title {
+        margin-left: -1rem; /* Define a margem esquerda */
+    }
+
+    /* Ajuste na margem esquerda do input do gênero */
+    .gender-inputs input {
+        margin-left: -2rem; /* Define a margem esquerda */
+    }
+
+    /* Ajuste na margem esquerda do label para "Outros" */
+    .gender-input .label-others {
+        margin-left: 5.5rem; /* Define a margem esquerda */
+    }
+
+    .btn-cadastro-entrar {
+        margin-left: 6rem; /* Define uma margem esquerda de 6rem para o botão com a classe "btn-cadastro-entrar" */
+    }
+    
+    .form-app {
+        display: flex; /* Define o contêiner com a classe "form-app" como um contêiner flexível */
+        flex-direction: column; /* Alinha os elementos filhos dentro do contêiner "form-app" em uma coluna, um abaixo do outro */
+    }
+    
+    .container-map {
+        margin-left: 0; /* Remove qualquer margem esquerda do contêiner com a classe "container-map" */
+    }
+    
+    .container-resposta {
+        display: flex; /* Define o contêiner com a classe "container-resposta" como um contêiner flexível */
+        flex-direction: column; /* Alinha os elementos filhos dentro do contêiner "container-resposta" em uma coluna, um abaixo do outro */
+        margin-bottom: 2rem; /* Adiciona uma margem inferior de 2rem ao contêiner "container-resposta" */
+    }
+
+}
+
+/* Media query para telas com largura máxima de 844px */
+@media (max-width: 844px) {
+    /* Ajuste na largura da seção de login */
+    .login {
+        width: 22rem; /* Define a largura */
+    }
+
+    /* Ajustes na descrição */
+
+    .description {
+        font-size: 12px; /* Define o tamanho da fonte */
+        width: 16.5rem; /* Define a largura */
+        margin-left: 2rem; /* Define a margem esquerda */
+    }
+
+    /* Ajustes no layout do formulário de login */
+
+    .form-login label {
+        margin-left: -1rem; /* Define a margem esquerda */
+    }
+
+    /* Ajustes no layout dos inputs do formulário de login */
+
+    .form-login input {
+        margin-left: 0.9rem; /* Define a margem esquerda */
+    }
+
+    /* Ajustes na margem esquerda do container do botão */
+
+    .container-btn {
+        margin-left: -1.5rem; /* Define a margem esquerda */
+    }
+
+    /* Ajustes na margem esquerda do link */
+    a {
+        margin-left: -1.5rem; /* Define a margem esquerda */
+    }
+
+    /* Estilizando a página sucessDelete */
+
+    /* Ajustes na margem esquerda do link dentro do container do botão "Voltar" */
+    .container-button-voltar a {
+        margin-left: 0.1rem; /* Define a margem esquerda */
+    }
+
+    /*Estilizando a área de delete */
+
+    .btn-excluir  {
+        width: 8rem; /*Ajustes na largura do botão para telas com no max 844px */
+    }
+}
+
+/* Media query para telas com largura máxima de 812px */
+@media (max-width: 812px) {
+    /* Ajuste na largura da seção de login */
+    .login {
+        width: 21rem; /* Define a largura */
+    }
+
+    /* Ajustes na margem esquerda do cabeçalho do formulário */
+    .form-header {
+        margin-left: -2.5rem; /* Define a margem esquerda */
+        width: 22rem; /* Define a largura */
+    }
+}
+
+/* Media query para telas com largura máxima de 428px */
+@media (max-width:428px) {
+    /* Ajuste na margem esquerda da seção de login */
+    .login {
+        margin-left: 2rem; /* Define a margem esquerda */
+    }
+}
+
+/* Media query para telas com largura máxima de 360px */
+
+@media (max-width: 360px) {
+    /* Ajuste na largura da seção de login */
+
+    .login {
+        width: 19.4rem; /* Define a largura */
+    }
+
+    /* Ajustes na margem esquerda da descrição */
+
+    .description {
+        margin-left: 0rem; /* Define a margem esquerda */
+    }
+
+    /* Ajustes na margem esquerda do container de login */
+
+    .container-login {
+        margin-left: -0.5rem; /* Define a margem esquerda */
+    }
+
+    /* Estilizando a área de cadastro: */
+
+    /* Ajuste na largura do container de cadastro */
+
+    .container-cadastro {
+        width: 72%; /* Define a largura */
+    }
+
+    /* Ajuste na largura do botão dentro do container de cadastro */
+
+    .cadastro-btn {
+        width: 8rem; /* Define a largura */
+    }
+
+    /* Ajuste no espaçamento do título do gênero */
+
+    .gender-title {
+        margin: 6px; /* Define o espaçamento */
+    }
+
+    /* Ajuste no espaçamento do título do formulário */
+    h6 {
+        margin: -1.5rem; /* Define o espaçamento */
+    }
+}

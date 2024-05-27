@@ -1,0 +1,89 @@
+<!--
+CABEÇALHO:
+---------------------------------------------------------------------
+ARQUIVO: templates/login.html
+---------------------------------------------------------------------
+AUTOR DO CÓDIGO: GUSTAVO GANTOIS CARIA CARVALHO
+---------------------------------------------------------------------
+DATA DA REALIZAÇÃO DO CÓDIGO: 19/05/2024 
+----------------------------------------------------------------------
+DEPENDÊNCIAS:
+
+HTML SEMÂNTICO 
+UTILIZAÇÃO DE FORMULÁRIO
+Link com o backend junto a isso com o banco de dados SQLAlchemy
+Flask para ligar as rotas do HTML
+
+DESCRIÇÃO: Criação de um formulário com method POST linkado com os estilos (styles.css) HTML para dar estilos a cada página/sessão, este formulário
+é responsavel pelo login do usuário do aplicativo.
+-->
+
+<!DOCTYPE html>
+<!--Mostrando que a linguagem da página sera pt-br-->
+<html lang="pt-br">
+<!--Sessão head do site, responsável pelo cabeçalho onde ficaram os links sobre cada coisa será utilizada ao longo do html-->
+<head>
+    <!--charset=UTF-8 para rodar na maioria dos navegadores-->
+    <meta charset="UTF-8">
+    <!--Link para o font-awesome para utilizar os links que estão no projeto -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!--Mostrando o meta da aplicação -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!--Título da página que está sendo renderizada, este título ficará no canto esquerdo na web-->
+    <title>Minha Aplicação Flask - Página de Login</title>
+    <!--Linkando o arquivo cs/styles.css com o html através do Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<!--Tag body, onde ficará o corpo do site contendo todas as informações do login.html Infinity 2.0-->
+<body>
+    <!--Utilizando o HTML semântico com section para mostrar a sessão onde dentro estará o login:-->
+    <section class="login">
+         <!--Div que no caso é um bloco onde ficará armazenado alguma coisa/informações, neste caso será o container onde estará a descrição do aplicativo junto ao título -->
+        <div class="container-title-description">
+             <!--Tag h1 responsável por uma tag que utilizamos para botar títulos principais das páginas, junto a uma tag span, utilizei a tag span para mudar a cor da frase para vermelho. -->
+            <h1 class="title-welcome">Bem vindo ao 
+                <span>INFINITY APP 2.0</span>
+            </h1>
+            <!--Tag onde estará um paragrafo com a classe description -->
+            <p class="description">
+                Somos uma escola internacionalmente certificada,
+                com ensino presencial e voltado às necessidades
+                profissionais do século XXI nas áreas de inovação e criatividade.
+                Oferecemos uma experiência única para nossos alunos.
+            </p>
+        </div>
+        <!--A div é o container onde estará armazenada o login -->
+        <div class="container-login" id="container-login">
+            <!--O h3 irá mostrar o login -->
+            <h3 class="login-title">Login</h3>
+            <!--Aqui ficará a tag form onde estará o login e os inputs para o login do usuário. -->
+            <form action="{{ url_for('login') }}" method="POST" class="form-login">
+                <!--Label é responsável pela pergunta do input para o usuário-->
+                <label class="nome-label" for="username">Nome do Usuário:</label>
+                 <!--O input é utilizado para o usuário mandar as informações do name user-->
+                <input type="text" id="username" name="username" placeholder="Nome" required class="input-name">
+                <!--Label é responsável pela pergunta do input para o usuário-->
+                <label for="password">Senha:</label>
+                 <!--O input é utilizado para o usuário mandar as informações da senha dele-->
+                <input type="password" id="password" name="password" placeholder="Senha" required class="input-senha">
+                 <!--O container div irá armazenar o paragrafo e junto a isso um botão que o usuário clicará para entrar e se estiver cadastrado terá acesso ao app Infinity 2.0-->
+                <div class="container-btn">
+                    {% if error %}
+                        <p class="error-message">{{ error }}</p>
+                    {% endif %}
+                    <button type="submit" value="entrar" id="btn-entrar">Entrar</button>
+                </div>
+                 <!--A tag terá o link da url de cadastro através desse link será redirecionado para a página com Flask. -->
+                <a href="{{ url_for('cadastro') }}">Não tem uma conta? Cadastre-se</a>
+                  <!--A tag terá o link da url de delete através desse link será redirecionado para a página com Flask. -->
+                <a href="{{ url_for('delete') }}" class="excluir-conta">Desejo excluir minha conta</a>
+            </form>
+              <!--Fechando a tag form. -->
+        </div>
+          <!--Fechando a div que ficará o container com o formulário dentro. -->
+    </section>
+      <!--Fechamento da sessão de login. -->
+</body>
+  <!--Aqui está o fechamento do corpo do site na tag body. -->
+</html>
+  <!--Fechamento da tag HTML. -->

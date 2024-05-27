@@ -1,0 +1,87 @@
+<!--
+CABEÇALHO:
+---------------------------------------------------------------------
+ARQUIVO: templates/site.html
+---------------------------------------------------------------------
+AUTOR DO CÓDIGO: GUSTAVO GANTOIS CARIA CARVALHO
+---------------------------------------------------------------------
+DATA DA REALIZAÇÃO DO CÓDIGO: 19/05/2024 
+----------------------------------------------------------------------
+DEPENDÊNCIAS:
+
+HTML SEMÂNTICO 
+UTILIZAÇÃO DE FORMULÁRIO
+CONSUMO DE API do Google Places API
+Link com o backend junto a isso com o banco de dados SQLAlchemy
+Flask para ligar as rotas do HTML
+
+DESCRIÇÃO: Criação de um formulário com method POST linkado com os estilos (styles.css) HTML para dar estilos a cada página/sessão, este formulário
+é responsavel por pegar os inputs de origem e destino do usuário e após isso dar informações como CEP, tempo de duração da viagem, distância em KM, Dias/Horas/Minutos 
+até chegar a determinado local e quanto tempo demoraria para se transportar através de um veículo. 
+-->
+
+<!DOCTYPE html>
+<!--Mostrando que a linguagem da página sera pt-br-->
+<html lang="pt-br">
+<!--Sessão head do site, responsável pelo cabeçalho onde ficaram os links sobre cada coisa será utilizada ao longo do html-->
+<head>
+    <!--charset=UTF-8 para rodar na maioria dos navegadores-->
+    <meta charset="UTF-8">
+    <!--Scripts pegando o link https do google maps e junto a isso utilizando a chave dada no Google Maps API (Google Places API) ela será assíncrona e o defer é para ela ser executada primeiro, antes de tudo-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_60gop36OSgTMCA13l7OK1dWd63xP2A8&region=pt-BR&callback=initMap" async defer></script>
+    <!--Mostrando o meta da aplicação -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Linkando o arquivo cs/styles.css com o html através do Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!--Título da página que está sendo renderizada, este título ficará no canto esquerdo na web-->
+    <title>Página - App Infinity 2.0</title>
+</head>
+<!--Tag body, onde ficará o corpo do site contendo todas as informações do site/app Infinity 2.0-->
+<body>
+    <!--Tag h1 responsável por uma tag que utilizamos para botar títulos principais das páginas, junto a uma tag span, utilizei a tag span para mudar a cor da frase para vermelho.-->
+    <h1 class="title-app">App Rotas <span>INFINITY 2.0</span></h1>
+    <!--Div que no caso é um bloco onde ficará armazenado alguma coisa/informações, neste caso ele está armazenando um mapa, a classe dessa div é container-map -->
+    <div class="container-map">
+        <!--Utilizando o iframe-->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31102.234993405295!2d-38.453248!3d-12.9859584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1716162000346!5m2!1spt-BR!2sbr" width="1750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="map"></iframe>
+    </div>
+    <!--Utilizando o HTML semântico com section para mostrar a sessão onde dentro estará o aplicativo:-->
+    <section class="app">
+    <!--Com o h2 eu crio o subtitulo do aplicativo que será calcular a distância -->
+        <h2 class="subtitle-app">Calcular a Distância entre 2 locais</h2>
+        <!--Utilizando a tag form botando o formulário para captar as informações que o usuário da através dos inputs-->
+        <form id="rotaForm" action="/app" class="form-app" method="POST">
+            <!--Label é responsável pela pergunta do input para o usuário-->
+            <label for="origem">Origem:</label>
+            <!--O input é utilizado para o usuário mandar as informações-->
+            <input type="text" id="origem" name="origem" placeholder="Origem" value=" " required>
+            <!--Label é responsável pela pergunta do input para o destino-->
+            <label for="destino">Destino:</label>
+            <!--O input é utilizado para o usuário mandar as informações-->
+            <input type="text" id="destino" name="destino" placeholder="Destino" value=" " required>
+            <!--O button é utilizado para mandar informações para o javascript através do onclick fazendo ele disparar um evento -->
+            <button class="btn-calcular-rota" type="submit">Calcular rota</button>
+        </form>
+        <!--A div é um container que irá armazenar algum bloco html, neste caso ela armazena paragrafos (tag <p></p>) e spans para mostrar o endereço de origem após a API realizar as suas determinadas funções -->
+        <div class="container-resposta">
+            <!--Tag onde estára um paragrafo com o id no span para acrescentar as informações da distância após o funcionamento da API-->
+            <p>Distância: <span id="distancia"></span></p>
+               <!--Tag onde estára um paragrafo com o id no span para acrescentar as informações da duração após o funcionamento da API-->
+            <p>Duração: <span id="duracao"></span></p>
+               <!--Tag onde estára um paragrafo com o id no span para acrescentar as informações do endereço de origem após o funcionamento da API-->
+            <p>Endereço de Origem:  <span id="endereco_origem"></span></p>
+               <!--Tag onde estára um paragrafo com o id no span para acrescentar as informações da endereço de destino após o funcionamento da API-->
+            <p>Endereço de Destino:  <span id="endereco_destino"></span></p>
+        </div>
+           <!--O id frase está como um paragrafo neste código porque ele irá realizar um evento JavaScript através do innerText mostrando uma frase.-->
+        <p id="frase"></p>
+    </section>
+       <!--Linkando o script através da tag script src= "" para fazer com que todas os eventos na web(front-end) sejam realizados.-->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+   <!--Aqui acaba a tag body se fecha o corpo desta sessão de aplicativo-->
+</html>
+   <!--Aqui se fecha o HTML.-->
+
+
+
