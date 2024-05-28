@@ -1,3 +1,5 @@
+INFELIZMENTE NÃO CONSEGUI FAZER O DEPLOY DA APLICAÇÃO.
+
 <h1>Infinity App 2.0 com Flask</h1>
 <h2>Desafio realizado para conseguir a vaga na empresa</h2>
 -------------------------------------------------------------------------------------------------------------------
